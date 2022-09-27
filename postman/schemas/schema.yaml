@@ -1,7 +1,18 @@
-openapi: '3.0.0'
+openapi: "3.0.0"
 info:
-  version: '1.0.0'
-  title: 'Sample REST API'
-  description: Todo Lists API  
-  paths:
-    - _
+    version: "1.0.0"
+    title: "Sample REST API"
+    description: Todo Lists API
+servers:
+    - url: http://localhost:8080
+    - url: https://sample-tasks-api.herokuapp.com
+security:
+    - BasicAuth: []
+    - BearerToken: []
+paths:
+    /_/cleanup:
+        summary: (dev only) cleanup database
+    /auth/check-token:
+        summary: check authentication token validity
+    /auth/register:
+        summary: register a new user account
