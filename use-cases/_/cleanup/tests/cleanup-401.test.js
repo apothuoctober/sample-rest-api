@@ -3,8 +3,12 @@ const { expect } = require('chai');
 const route = require('../route');
 const testRequest = require('../../../../test-utils/test-request');
 const getRouteUrl = require('../../../../test-utils/get-route-url');
+const cleanupAndSeed = require('../../../../test-utils/cleanup-and-seed');
 
 describe('Use case - Cleanup - Errors', function () {
+  before(async function () {
+    await cleanupAndSeed();
+  });
   it('* must respond with 401 when auth is not provided', function (done) {
     testRequest({
       method: route.method,
