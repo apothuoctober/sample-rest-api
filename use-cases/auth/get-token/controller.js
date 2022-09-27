@@ -1,4 +1,4 @@
-const User = require('../../../user-model');
+const User = require('../../../models/user-model');
 
 async function controller(req, res) {
   if (!(req.body.username || req.body.email)) return res.status(400).json('username or email is required in request body');

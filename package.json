@@ -2,16 +2,34 @@
   "name": "sample-rest-api",
   "version": "1.0.0",
   "description": "",
-  "main": "express-app.js",
-  "scripts": {
-    "dev": "nodemon start.js",
-    "start": "node start.js"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
+  "main": "./start.js",
+  "scripts": {
+    "cleanup": "npm i -D rimraf && rimraf package-lock.json && rimraf node_modules && npm i",
+    "dev": "nodemon start.js",
+    "lint": "eslint . --ext js",
+    "start": "node start.js",
+    "start_for_tests": "node start.js",
+    "start_and_test": "start-server-and-test start_for_tests http://localhost:8080/ping test",
+    "cover_start_and_test": "nyc --branches 50 --check-coverage --clean --functions 100 --include \"**/*.js\" --lines 75 --reporter lcov --reporter json --reporter text --statements 75 npm run start_and_test",
+    "test": "mocha --allow-uncaught --check-leaks --colors true --diff true --full-trace true --recursive \"{use-cases,utils}/**/*.test.js\" --reporter spec --sort true --timeout 5000 --ui bdd",
+    "watch_test": "mocha --allow-uncaught --check-leaks --colors true --diff true --full-trace true --recursive \"{use-cases,utils}/**/*.test.js\" --reporter spec --sort true --timeout 5000 --ui bdd --watch true --watch-files \"{app,constants,handlers,models,mongo,test-utils,use-cases,utils}/**/*.js\""
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "bcrypt": "^5.0.1",
     "chai": "^4.3.6",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "express-basic-auth": "^1.2.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "mongodb-memory-server": "^8.9.3",
+    "mongoose": "^6.6.1"
+  },
+  "devDependencies": {
     "eslint": "^8.24.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
@@ -20,13 +38,8 @@
     "mocha": "^10.0.0",
     "nodemon": "^2.0.20",
     "nyc": "^15.1.0",
-    "sinon": "^14.0.0"
-  },
-  "dependencies": {
-    "bcrypt": "^5.0.1",
-    "dotenv": "^16.0.2",
-    "express": "^4.18.1",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.6.1"
+    "rimraf": "^3.0.2",
+    "sinon": "^14.0.0",
+    "start-server-and-test": "^1.14.0"
   }
 }

@@ -28,6 +28,7 @@ UserSchema.methods.comparePassword = function (plaintext) {
 UserSchema.methods.createJWT = function () {
   return jsonwebtoken.sign(
     {
+      _id: this._id.toString(),
       email: this.email,
       username: this.username,
       password: this.password,

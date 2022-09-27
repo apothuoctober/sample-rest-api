@@ -8,7 +8,11 @@ function getAllUseCaseRoutes(object, routes = []) {
       routesCopy = getAllUseCaseRoutes(childObject, routesCopy);
     }
   } else {
-    routesCopy.push({ controller: object.controller, method: object.route.method, path: object.route.path });
+    routesCopy.push({
+      controller: object.controller,
+      method: object.route.method,
+      path: object.route.path,
+    });
   }
   return routesCopy;
 }

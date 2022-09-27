@@ -1,6 +1,6 @@
 const route = {
   method: 'post',
-  path: '/task-groups/:tasksGroupId/ban',
+  path: '/tasks-groups/:tasksGroupId/ban',
 };
 
 module.exports = route;

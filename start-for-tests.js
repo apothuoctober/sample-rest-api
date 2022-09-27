@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const connectMongo = require('./mongo/connect-mongo');
+const connectMongo = require('./mongo/connect-mongo-in-memory');
 const httpServer = require('./app/http-server');
 const httpPort = require('./constants/httpPort');
 

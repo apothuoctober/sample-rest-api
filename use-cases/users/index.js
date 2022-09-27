@@ -1,3 +1,4 @@
 module.exports = {
-  editProfile: require('./edit-profile'),
+  findUserById: require('./find-user-by-id'),
+  listUsers: require('./list-users'),
 };

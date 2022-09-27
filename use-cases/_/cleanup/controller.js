@@ -1,6 +1,6 @@
-const Task = require('../../../task-model');
-const TasksGroup = require('../../../tasks-group-model');
-const User = require('../../../user-model');
+const Task = require('../../../models/task-model');
+const TasksGroup = require('../../../models/tasks-group-model');
+const User = require('../../../models/user-model');
 
 async function controller(req, res) {
   await Task.deleteMany({});

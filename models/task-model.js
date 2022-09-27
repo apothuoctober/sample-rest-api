@@ -1,7 +1,7 @@
 const { default: mongoose } = require('mongoose');
 
 const TaskSchema = new mongoose.Schema({
-  groupId: { type: mongoose.Types.ObjectId, ref: 'TasksGroup' },
+  groupId: { type: String },
   name: { type: String, required: true },
   completed: { type: Boolean, default: false },
   completedBy: { type: mongoose.Types.ObjectId, ref: 'User', default: null },

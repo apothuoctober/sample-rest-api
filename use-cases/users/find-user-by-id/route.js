@@ -1,6 +1,6 @@
 const route = {
   method: 'get',
-  path: '/tasks-groups/:tasksGroupId',
+  path: '/users/:userId',
 };
 
 module.exports = route;
