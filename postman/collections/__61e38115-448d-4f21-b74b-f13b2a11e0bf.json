@@ -1,0 +1,108 @@
+{
+	"info": {
+		"_postman_id": "c8c6c21f-2607-4aca-b952-d378c0be6f8e",
+		"name": "/_",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/cleanup",
+			"item": [
+				{
+					"name": "nominal",
+					"id": "35973abd-da74-47fe-a27b-428ace85c8dd",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{adminSecret}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{adminUsername}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/_/cleanup",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"_",
+								"cleanup"
+							]
+						},
+						"description": "**development endpoint**\n\nCleanup all objects in the database."
+					},
+					"response": [
+						{
+							"id": "20b3a968-0b46-416d-956d-949b8127595d",
+							"name": "Example 200",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/_/cleanup",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"_",
+										"cleanup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "4"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4-Ut1MdMgT2zeQF5xPI2zq2so0Z6g\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 26 Sep 2022 17:31:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "\"ok\""
+						}
+					]
+				}
+			],
+			"id": "dc164a85-5760-4a8a-a24c-3eac627a4276"
+		}
+	]
+}

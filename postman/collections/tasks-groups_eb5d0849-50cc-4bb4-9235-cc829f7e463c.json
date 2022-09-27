@@ -1,0 +1,1687 @@
+{
+	"info": {
+		"_postman_id": "bd4e1d13-e842-4f85-a318-df2288efecc8",
+		"name": "/tasks-groups",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/:tasksGroupId",
+			"item": [
+				{
+					"name": "/ban",
+					"item": [
+						{
+							"name": "200 - ban user#2 as user#1 from group#1.1",
+							"id": "b04b08d4-5e45-415a-8a61-655aa3d62649",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{userToken1}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"userIds\": [\n        \"{{userId2}}\"\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/tasks-groups/:tasksGroupId/ban",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tasks-groups",
+										":tasksGroupId",
+										"ban"
+									],
+									"variable": [
+										{
+											"id": "4cf05614-b443-4bbb-8c7f-1ccfcdbc8d66",
+											"key": "tasksGroupId",
+											"value": "{{tasksGroupId1.1}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "b744f7ad-0712-42e7-845a-6c119c5636ce"
+				},
+				{
+					"name": "/invite",
+					"item": [
+						{
+							"name": "200 - invite user#2 as user#1 in group#1.1",
+							"id": "6ebf0cad-638a-4162-a775-bc2150844a64",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{userToken1}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"invitations\": [\n        {\n            \"userId\": \"{{userId2}}\",\n            \"role\": \"writer\"\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/tasks-groups/:tasksGroupId/invite",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tasks-groups",
+										":tasksGroupId",
+										"invite"
+									],
+									"variable": [
+										{
+											"key": "tasksGroupId",
+											"value": "{{tasksGroupId1.1}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "9073f5c6-a06e-44c1-a7ac-f5abf2352145"
+				},
+				{
+					"name": "200 - nominal as user#1 (group#1.1)",
+					"id": "5218e103-4e16-467c-888d-381c89a482a8",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{userToken1}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/tasks-groups/:tasksGroupId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tasks-groups",
+								":tasksGroupId"
+							],
+							"variable": [
+								{
+									"key": "tasksGroupId",
+									"value": "{{tasksGroupId1.1}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "8d075ee8-deb7-4dfc-a0f4-b1b57174d600",
+							"name": "200 - get tasks group details nominal",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/tasks-groups/:tasksGroupId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tasks-groups",
+										":tasksGroupId"
+									],
+									"variable": [
+										{
+											"key": "tasksGroupId",
+											"value": "{{tasksGroupId}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "291"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"123-3iFtDqfOXUca7W2PNDWkxUdOxhs\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 Sep 2022 06:57:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"_id\": \"63329cf1bddf3fdf212d3e8b\",\n    \"name\": \"group#2\",\n    \"members\": [\n        {\n            \"userId\": \"63328125f7ca731a80c53c5e\",\n            \"role\": \"admin\",\n            \"createdAt\": \"2022-09-27T06:49:21.763Z\",\n            \"updatedAt\": \"2022-09-27T06:49:21.763Z\"\n        }\n    ],\n    \"tasks\": [],\n    \"createdAt\": \"2022-09-27T06:49:21.763Z\",\n    \"updatedAt\": \"2022-09-27T06:49:21.763Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "403 - no authorization",
+					"id": "57e469ae-216e-4e36-a835-89c0581e04d5",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/tasks-groups/:tasksGroupId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tasks-groups",
+								":tasksGroupId"
+							],
+							"variable": [
+								{
+									"id": "3510039b-6783-4cbc-976c-cd888222106f",
+									"key": "tasksGroupId",
+									"value": "{{tasksGroupId}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "4146f4e1-6abd-4a60-a998-a184de0c296b",
+							"name": "403 - no authorization",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/tasks-groups/:tasksGroupId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tasks-groups",
+										":tasksGroupId"
+									],
+									"variable": [
+										{
+											"id": "3510039b-6783-4cbc-976c-cd888222106f",
+											"key": "tasksGroupId",
+											"value": "{{tasksGroupId}}"
+										}
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21-dRMxD+hm7m+t21yBAWFqubslgEA\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 Sep 2022 06:58:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "\"valid authorization is required\""
+						}
+					]
+				},
+				{
+					"name": "404 - not found",
+					"id": "6c7d0893-6950-4398-b42a-c8581898c3d6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{userToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/tasks-groups/:tasksGroupId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tasks-groups",
+								":tasksGroupId"
+							],
+							"variable": [
+								{
+									"key": "tasksGroupId",
+									"value": "{{randomObjectId}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "50f181f3-110a-440a-8dd1-45fb1949c314",
+							"name": "404 - not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/tasks-groups/:tasksGroupId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"tasks-groups",
+										":tasksGroupId"
+									],
+									"variable": [
+										{
+											"key": "tasksGroupId",
+											"value": "{{randomObjectId}}"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "23"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"17-055l+dgMeWK454t8QmxnV2lg+Ko\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 Sep 2022 07:01:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "\"tasks group not found\""
+						}
+					]
+				}
+			],
+			"id": "6b3b4a8a-8b55-4653-98fb-ee8567c79b2d"
+		},
+		{
+			"name": "201 - nominal user#1 (group#1.1)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6fdfccff-8604-4ef2-99dc-59ea92b1bc02",
+						"exec": [
+							"pm.environment.set(\"tasksGroupId1.1\", pm.response.json()._id);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "607b7ffa-eff2-4eab-aae8-1047304c68b6",
+						"exec": [
+							"pm.collectionVariables.set(\"randomTasksGroupName\", \"group.{{$timestamp}}\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "ed6fce35-9cb8-4b38-b7cd-c6846d68054e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{userToken1}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"{{randomTasksGroupName}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/tasks-groups",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"tasks-groups"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "d1991dab-4916-40ba-abd8-d40d94079a55",
+					"name": "201 - nominal",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"group#2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/tasks-groups",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tasks-groups"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "291"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"123-8EnXnmMJuZq42krELXvgE/yVA5k\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 27 Sep 2022 06:49:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"name\": \"group#2\",\n    \"members\": [\n        {\n            \"userId\": \"63328125f7ca731a80c53c5e\",\n            \"role\": \"admin\",\n            \"createdAt\": \"2022-09-27T06:49:21.763Z\",\n            \"updatedAt\": \"2022-09-27T06:49:21.763Z\"\n        }\n    ],\n    \"tasks\": [],\n    \"_id\": \"63329cf1bddf3fdf212d3e8b\",\n    \"createdAt\": \"2022-09-27T06:49:21.763Z\",\n    \"updatedAt\": \"2022-09-27T06:49:21.763Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "201 - nominal user#1 (group#1.2)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6fdfccff-8604-4ef2-99dc-59ea92b1bc02",
+						"exec": [
+							"pm.environment.set(\"tasksGroupId1.2\", pm.response.json()._id);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "607b7ffa-eff2-4eab-aae8-1047304c68b6",
+						"exec": [
+							"pm.collectionVariables.set(\"randomTasksGroupName\", \"group.{{$timestamp}}\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "3ee0e799-4086-4abb-b401-03e816d1b9ec",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{userToken1}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"{{randomTasksGroupName}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/tasks-groups",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"tasks-groups"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "e16d28c2-f314-4b8e-a399-5a266df290f8",
+					"name": "201 - nominal",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"group#2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/tasks-groups",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tasks-groups"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "291"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"123-8EnXnmMJuZq42krELXvgE/yVA5k\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 27 Sep 2022 06:49:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"name\": \"group#2\",\n    \"members\": [\n        {\n            \"userId\": \"63328125f7ca731a80c53c5e\",\n            \"role\": \"admin\",\n            \"createdAt\": \"2022-09-27T06:49:21.763Z\",\n            \"updatedAt\": \"2022-09-27T06:49:21.763Z\"\n        }\n    ],\n    \"tasks\": [],\n    \"_id\": \"63329cf1bddf3fdf212d3e8b\",\n    \"createdAt\": \"2022-09-27T06:49:21.763Z\",\n    \"updatedAt\": \"2022-09-27T06:49:21.763Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "201 - nominal user#2 (group#2.1)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6fdfccff-8604-4ef2-99dc-59ea92b1bc02",
+						"exec": [
+							"pm.environment.set(\"tasksGroupId2.1\", pm.response.json()._id);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "607b7ffa-eff2-4eab-aae8-1047304c68b6",
+						"exec": [
+							"pm.collectionVariables.set(\"randomTasksGroupName\", \"group.{{$timestamp}}\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "20464d59-8857-4afe-a3b2-edd543415387",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{userToken2}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"{{randomTasksGroupName}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/tasks-groups",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"tasks-groups"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "0f1d2789-5d27-4b04-ab6e-07db08b0a770",
+					"name": "201 - nominal",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"group#2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/tasks-groups",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tasks-groups"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "291"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"123-8EnXnmMJuZq42krELXvgE/yVA5k\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 27 Sep 2022 06:49:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"name\": \"group#2\",\n    \"members\": [\n        {\n            \"userId\": \"63328125f7ca731a80c53c5e\",\n            \"role\": \"admin\",\n            \"createdAt\": \"2022-09-27T06:49:21.763Z\",\n            \"updatedAt\": \"2022-09-27T06:49:21.763Z\"\n        }\n    ],\n    \"tasks\": [],\n    \"_id\": \"63329cf1bddf3fdf212d3e8b\",\n    \"createdAt\": \"2022-09-27T06:49:21.763Z\",\n    \"updatedAt\": \"2022-09-27T06:49:21.763Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "201 - nominal user#2 (group#2.2)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6fdfccff-8604-4ef2-99dc-59ea92b1bc02",
+						"exec": [
+							"pm.environment.set(\"tasksGroupId2.2\", pm.response.json()._id);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "607b7ffa-eff2-4eab-aae8-1047304c68b6",
+						"exec": [
+							"pm.collectionVariables.set(\"randomTasksGroupName\", \"group.{{$timestamp}}\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "65ec7ac9-9b73-4b4d-83de-88840c5f9b29",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{userToken2}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"{{randomTasksGroupName}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/tasks-groups",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"tasks-groups"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "0960d238-4ba5-4a8f-b2be-ae24ab45dbb9",
+					"name": "201 - nominal",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"group#2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/tasks-groups",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tasks-groups"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "291"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"123-8EnXnmMJuZq42krELXvgE/yVA5k\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 27 Sep 2022 06:49:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"name\": \"group#2\",\n    \"members\": [\n        {\n            \"userId\": \"63328125f7ca731a80c53c5e\",\n            \"role\": \"admin\",\n            \"createdAt\": \"2022-09-27T06:49:21.763Z\",\n            \"updatedAt\": \"2022-09-27T06:49:21.763Z\"\n        }\n    ],\n    \"tasks\": [],\n    \"_id\": \"63329cf1bddf3fdf212d3e8b\",\n    \"createdAt\": \"2022-09-27T06:49:21.763Z\",\n    \"updatedAt\": \"2022-09-27T06:49:21.763Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "201 - nominal user#3 (group#3.1)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6fdfccff-8604-4ef2-99dc-59ea92b1bc02",
+						"exec": [
+							"pm.environment.set(\"tasksGroupId3.1\", pm.response.json()._id);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "607b7ffa-eff2-4eab-aae8-1047304c68b6",
+						"exec": [
+							"pm.collectionVariables.set(\"randomTasksGroupName\", \"group.{{$timestamp}}\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "1b7dcd52-d180-442c-a8f2-8fd562986235",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{userToken3}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"{{randomTasksGroupName}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/tasks-groups",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"tasks-groups"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "fae46f77-4fc0-4844-9284-71f43809bedb",
+					"name": "201 - nominal",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"group#2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/tasks-groups",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tasks-groups"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "291"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"123-8EnXnmMJuZq42krELXvgE/yVA5k\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 27 Sep 2022 06:49:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"name\": \"group#2\",\n    \"members\": [\n        {\n            \"userId\": \"63328125f7ca731a80c53c5e\",\n            \"role\": \"admin\",\n            \"createdAt\": \"2022-09-27T06:49:21.763Z\",\n            \"updatedAt\": \"2022-09-27T06:49:21.763Z\"\n        }\n    ],\n    \"tasks\": [],\n    \"_id\": \"63329cf1bddf3fdf212d3e8b\",\n    \"createdAt\": \"2022-09-27T06:49:21.763Z\",\n    \"updatedAt\": \"2022-09-27T06:49:21.763Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "201 - nominal user#3 (group#3.2)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6fdfccff-8604-4ef2-99dc-59ea92b1bc02",
+						"exec": [
+							"pm.environment.set(\"tasksGroupId3.2\", pm.response.json()._id);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "607b7ffa-eff2-4eab-aae8-1047304c68b6",
+						"exec": [
+							"pm.collectionVariables.set(\"randomTasksGroupName\", \"group.{{$timestamp}}\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "c444f8fe-8921-4ad2-bb5a-71809006ae8a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{userToken3}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"{{randomTasksGroupName}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/tasks-groups",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"tasks-groups"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "461876fd-103a-4be7-8d34-1ae6ab248e06",
+					"name": "201 - nominal",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"group#2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/tasks-groups",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tasks-groups"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "291"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"123-8EnXnmMJuZq42krELXvgE/yVA5k\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 27 Sep 2022 06:49:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"name\": \"group#2\",\n    \"members\": [\n        {\n            \"userId\": \"63328125f7ca731a80c53c5e\",\n            \"role\": \"admin\",\n            \"createdAt\": \"2022-09-27T06:49:21.763Z\",\n            \"updatedAt\": \"2022-09-27T06:49:21.763Z\"\n        }\n    ],\n    \"tasks\": [],\n    \"_id\": \"63329cf1bddf3fdf212d3e8b\",\n    \"createdAt\": \"2022-09-27T06:49:21.763Z\",\n    \"updatedAt\": \"2022-09-27T06:49:21.763Z\",\n    \"__v\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "400 - no payload",
+			"id": "79db834c-d32e-47f8-9c3a-a07b940da1bf",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{userToken1}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/tasks-groups",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"tasks-groups"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "690bca88-985f-451a-8ff8-b8cfb2c1f567",
+					"name": "400 - no payload",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/tasks-groups",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tasks-groups"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "34"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"22-qOgnuyjhq8xrE2gEXkjjdsMz9F8\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 27 Sep 2022 06:54:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "\"name is required in request body\""
+				}
+			]
+		},
+		{
+			"name": "403 - no authorization",
+			"id": "03bba1ec-bf80-4b6d-bea8-3aaf80bedb54",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/tasks-groups",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"tasks-groups"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "374d9ae8-619c-47b8-88fd-cbfd04890075",
+					"name": "403 - no authorization",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/tasks-groups",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tasks-groups"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "33"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"21-dRMxD+hm7m+t21yBAWFqubslgEA\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 27 Sep 2022 06:49:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "\"valid authorization is required\""
+				}
+			]
+		},
+		{
+			"name": "200 - List all tasks groups (scoped to user#1)",
+			"id": "b2292e66-696a-466f-b33d-0c822aeb202a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{userToken1}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/tasks-groups",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"tasks-groups"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "a0e345bc-4aad-430d-9ee7-b81e8f516788",
+					"name": "200 - List all tasks groups (scoped to user)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/tasks-groups",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tasks-groups"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "215"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d7-krt0KmzC7E7Wc8lsPez08fl5zAM\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 27 Sep 2022 06:49:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "[\n    {\n        \"_id\": \"6332812bf7ca731a80c53c61\",\n        \"name\": \"group#1\",\n        \"members\": [\n            {\n                \"userId\": \"63328125f7ca731a80c53c5e\",\n                \"role\": \"admin\"\n            }\n        ],\n        \"tasks\": [],\n        \"createdAt\": \"2022-09-27T04:50:51.523Z\",\n        \"updatedAt\": \"2022-09-27T04:50:51.523Z\",\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "200 - List all tasks groups (scoped to user#2)",
+			"id": "13179ab6-7eac-4b87-b336-1b15803c45ec",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{userToken2}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/tasks-groups",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"tasks-groups"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "0d835569-8521-470b-be7a-7eac78d7f86c",
+					"name": "200 - List all tasks groups (scoped to user)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/tasks-groups",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tasks-groups"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "215"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d7-krt0KmzC7E7Wc8lsPez08fl5zAM\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 27 Sep 2022 06:49:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "[\n    {\n        \"_id\": \"6332812bf7ca731a80c53c61\",\n        \"name\": \"group#1\",\n        \"members\": [\n            {\n                \"userId\": \"63328125f7ca731a80c53c5e\",\n                \"role\": \"admin\"\n            }\n        ],\n        \"tasks\": [],\n        \"createdAt\": \"2022-09-27T04:50:51.523Z\",\n        \"updatedAt\": \"2022-09-27T04:50:51.523Z\",\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "200 - List all tasks groups (scoped to user#3)",
+			"id": "da0f87a2-58b5-4fdc-b0f3-61e4ebf94858",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{userToken3}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/tasks-groups",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"tasks-groups"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "b383cbaa-6695-40c3-bdbf-337f96ede04c",
+					"name": "200 - List all tasks groups (scoped to user)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/tasks-groups",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tasks-groups"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "215"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d7-krt0KmzC7E7Wc8lsPez08fl5zAM\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 27 Sep 2022 06:49:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "[\n    {\n        \"_id\": \"6332812bf7ca731a80c53c61\",\n        \"name\": \"group#1\",\n        \"members\": [\n            {\n                \"userId\": \"63328125f7ca731a80c53c5e\",\n                \"role\": \"admin\"\n            }\n        ],\n        \"tasks\": [],\n        \"createdAt\": \"2022-09-27T04:50:51.523Z\",\n        \"updatedAt\": \"2022-09-27T04:50:51.523Z\",\n        \"__v\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "403 - no authorization",
+			"id": "4a7b0369-50da-43e5-a669-5cc0823fdc7d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/tasks-groups",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"tasks-groups"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "80bb1b56-6e6f-4f02-8bdd-c825a16a6751",
+					"name": "403 - no authorization",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/tasks-groups",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"tasks-groups"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "33"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"21-dRMxD+hm7m+t21yBAWFqubslgEA\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 27 Sep 2022 06:54:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "\"valid authorization is required\""
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"id": "df8ffb6f-5770-4051-a8d0-60154015c9e8",
+			"key": "randomTasksGroupName",
+			"value": ""
+		}
+	]
+}

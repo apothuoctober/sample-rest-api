@@ -1,0 +1,1732 @@
+{
+	"info": {
+		"_postman_id": "49e033ea-a577-420f-989a-336abcba06f2",
+		"name": "/auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/register",
+			"item": [
+				{
+					"name": "201 - nominal #1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ad02a78f-f23c-4f29-bb9a-20c8b2564eb6",
+								"exec": [
+									"pm.environment.set(\"userEmail1\", pm.response.json().email);",
+									"pm.environment.set(\"userId1\", pm.response.json()._id);",
+									"pm.environment.set(\"userUsername1\", pm.response.json().username);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "8bc78d12-742b-44cc-adf9-632c8bc6e50b",
+								"exec": [
+									"pm.collectionVariables.set(\"randomUserEmail\", \"adrianpothuaud+todos.{{$timestamp}}@gmail.com\");",
+									"pm.collectionVariables.set(\"randomUsername\", \"adrianpothuaud-{{$timestamp}}\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "1a32bfd3-f9fe-478c-8878-cd648cb6c3df",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"{{randomUserEmail}}\",\n    \"username\": \"{{randomUsername}}\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "0cbe33c3-9005-442d-9e3c-c8e109f8a8ee",
+							"name": "Example 201",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"adrianpothuaud+todo.3@gmail.com\",\n    \"username\": \"apothuaud3\",\n    \"password\": \"password\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/register",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "260"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"104-N+eQHmhYJbx8MiuTddEjQYz4CfQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 26 Sep 2022 17:20:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"email\": \"adrianpothuaud+todo.3@gmail.com\",\n    \"username\": \"apothuaud3\",\n    \"password\": \"$2b$10$neGkkOILkFhgfcln3fAZHeU0COJJ3VMu3KaxN/xV5AKJyTDo0B5Ti\",\n    \"_id\": \"6331df6d24a743f463d51a87\",\n    \"createdAt\": \"2022-09-26T17:20:45.143Z\",\n    \"updatedAt\": \"2022-09-26T17:20:45.143Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "201 - nominal #2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ad02a78f-f23c-4f29-bb9a-20c8b2564eb6",
+								"exec": [
+									"pm.environment.set(\"userEmail2\", pm.response.json().email);",
+									"pm.environment.set(\"userId2\", pm.response.json()._id);",
+									"pm.environment.set(\"userUsername2\", pm.response.json().username);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "8bc78d12-742b-44cc-adf9-632c8bc6e50b",
+								"exec": [
+									"pm.collectionVariables.set(\"randomUserEmail\", \"adrianpothuaud+todos.{{$timestamp}}@gmail.com\");",
+									"pm.collectionVariables.set(\"randomUsername\", \"adrianpothuaud-{{$timestamp}}\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "cac09392-169e-462e-8eeb-4d20ad0b6e71",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"{{randomUserEmail}}\",\n    \"username\": \"{{randomUsername}}\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "d3c268e0-278f-4138-9a7c-bd27128cef2c",
+							"name": "Example 201",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"adrianpothuaud+todo.3@gmail.com\",\n    \"username\": \"apothuaud3\",\n    \"password\": \"password\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/register",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "260"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"104-N+eQHmhYJbx8MiuTddEjQYz4CfQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 26 Sep 2022 17:20:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"email\": \"adrianpothuaud+todo.3@gmail.com\",\n    \"username\": \"apothuaud3\",\n    \"password\": \"$2b$10$neGkkOILkFhgfcln3fAZHeU0COJJ3VMu3KaxN/xV5AKJyTDo0B5Ti\",\n    \"_id\": \"6331df6d24a743f463d51a87\",\n    \"createdAt\": \"2022-09-26T17:20:45.143Z\",\n    \"updatedAt\": \"2022-09-26T17:20:45.143Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "201 - nominal #3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ad02a78f-f23c-4f29-bb9a-20c8b2564eb6",
+								"exec": [
+									"pm.environment.set(\"userEmail3\", pm.response.json().email);",
+									"pm.environment.set(\"userId3\", pm.response.json()._id);",
+									"pm.environment.set(\"userUsername3\", pm.response.json().username);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "8bc78d12-742b-44cc-adf9-632c8bc6e50b",
+								"exec": [
+									"pm.collectionVariables.set(\"randomUserEmail\", \"adrianpothuaud+todos.{{$timestamp}}@gmail.com\");",
+									"pm.collectionVariables.set(\"randomUsername\", \"adrianpothuaud-{{$timestamp}}\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "9afd1a3d-e9bf-44ea-9aa9-aa9d762dade1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"{{randomUserEmail}}\",\n    \"username\": \"{{randomUsername}}\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "65abe0aa-21aa-4ab2-8d6d-669538acd610",
+							"name": "Example 201",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"adrianpothuaud+todo.3@gmail.com\",\n    \"username\": \"apothuaud3\",\n    \"password\": \"password\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/register",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "260"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"104-N+eQHmhYJbx8MiuTddEjQYz4CfQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 26 Sep 2022 17:20:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n    \"email\": \"adrianpothuaud+todo.3@gmail.com\",\n    \"username\": \"apothuaud3\",\n    \"password\": \"$2b$10$neGkkOILkFhgfcln3fAZHeU0COJJ3VMu3KaxN/xV5AKJyTDo0B5Ti\",\n    \"_id\": \"6331df6d24a743f463d51a87\",\n    \"createdAt\": \"2022-09-26T17:20:45.143Z\",\n    \"updatedAt\": \"2022-09-26T17:20:45.143Z\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "400 - no payload",
+					"id": "c481e33c-279a-47fe-a859-d3065538cb1f",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/auth/register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "cda7c449-1c8b-4b6e-99c9-f8dfa1f1b72c",
+							"name": "400 - no payload",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/auth/register",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "35"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"23-jysWYlu66a5RztP3OvAHeao3s70\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 26 Sep 2022 20:10:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "\"email is required in request body\""
+						}
+					]
+				},
+				{
+					"name": "400 - no username",
+					"id": "a34afd3e-9550-4c9d-9aba-4177dc2b0a18",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"sample@email.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "99eb2d7b-a7d2-40ef-bf3e-fddae6522a8d",
+							"name": "400 - no username",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"sample@email.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/register",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "38"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"26-Msp4zYR0iZhrT6Wwe1toWY4jgy4\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 26 Sep 2022 20:11:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "\"username is required in request body\""
+						}
+					]
+				},
+				{
+					"name": "400 - no password",
+					"id": "7667cde1-0298-42e2-8eba-c19609b95cef",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"sample@email.com\",\n    \"username\": \"username\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "504e661d-ce87-414b-a748-4960271c954b",
+							"name": "400 - no password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"sample@email.com\",\n    \"username\": \"username\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/register",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "38"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"26-opmCapVyEYNy944a8KAyiqY1vnc\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 26 Sep 2022 20:11:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "\"password is required in request body\""
+						}
+					]
+				},
+				{
+					"name": "409 - registered email",
+					"id": "fd8a320f-5a40-4f51-a2ca-95e078d2d3e9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"{{userEmail}}\",\n    \"username\": \"apothuaud\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "3fa2e488-9bd9-42ef-af74-61312cdf82e0",
+							"name": "409 - registered email",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"{{userEmail}}\",\n    \"username\": \"apothuaud\",\n    \"password\": \"password\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/register",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "26"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a-hOE9EWpM4A70N9PmN8NvXDefDzE\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 26 Sep 2022 20:12:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "\"email already registered\""
+						}
+					]
+				},
+				{
+					"name": "409 - registered username",
+					"id": "a48c6793-fd4d-4fd5-8397-624cd519dd54",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"blabla@email.com\",\n    \"username\": \"{{userUsername}}\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "07c5bfda-ae22-4a72-8e28-4af0bdb8017b",
+							"name": "409 - registered username",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"blabla@email.com\",\n    \"username\": \"{{userUsername}}\",\n    \"password\": \"password\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/register",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "29"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1d-aZwLeBUSi47/rAxUTy/O3eVv5fg\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 26 Sep 2022 20:13:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "\"username already registered\""
+						}
+					]
+				}
+			],
+			"id": "e734b2b1-b4a4-4909-adc5-0e4b1f93e173"
+		},
+		{
+			"name": "/get-token",
+			"item": [
+				{
+					"name": "200 - nominal user#1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7b30b182-c77b-496d-8013-2a0663be9afe",
+								"exec": [
+									"pm.environment.set(\"userToken1\", pm.response.json());"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "f20b831e-11cd-4045-a5d1-f0759ca677ba",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"{{userUsername1}}\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/get-token",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"get-token"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "5e38a3b1-e5f8-4ef4-8abf-556680666690",
+							"name": "200 - nominal",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"{{userUsername}}\",\n    \"password\": \"password\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/get-token",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"get-token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "334"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"14e-RyGEMlJF/3z6havgo8JddUPrTrw\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 Sep 2022 06:47:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzMyODEyNWY3Y2E3MzFhODBjNTNjNWUiLCJlbWFpbCI6ImFkcmlhbnBvdGh1YXVkK3RvZG9AZ21haWwuY29tIiwidXNlcm5hbWUiOiJhcG90aHVhdWQiLCJwYXNzd29yZCI6IiQyYiQxMCRpL2xXZ0NEblFmMVZjMi9TVW1pQnd1bjFtU1l2N2ZFYmcxRXBZYkprZndEblZnU2ZZanV4MiIsImlhdCI6MTY2NDI2MTIzOX0.m1Ma4OrK0cY4iN3Lxojy4MiDk3NmQN4cK9FkYP3qbL4\""
+						}
+					]
+				},
+				{
+					"name": "200 - nominal user#2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7b30b182-c77b-496d-8013-2a0663be9afe",
+								"exec": [
+									"pm.environment.set(\"userToken2\", pm.response.json());"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "4d3de170-c7df-484e-b20e-72120dc5fa21",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"{{userUsername2}}\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/get-token",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"get-token"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "136cee0e-ca76-4a1c-ad79-9cc7bfeea795",
+							"name": "200 - nominal",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"{{userUsername}}\",\n    \"password\": \"password\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/get-token",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"get-token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "334"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"14e-RyGEMlJF/3z6havgo8JddUPrTrw\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 Sep 2022 06:47:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzMyODEyNWY3Y2E3MzFhODBjNTNjNWUiLCJlbWFpbCI6ImFkcmlhbnBvdGh1YXVkK3RvZG9AZ21haWwuY29tIiwidXNlcm5hbWUiOiJhcG90aHVhdWQiLCJwYXNzd29yZCI6IiQyYiQxMCRpL2xXZ0NEblFmMVZjMi9TVW1pQnd1bjFtU1l2N2ZFYmcxRXBZYkprZndEblZnU2ZZanV4MiIsImlhdCI6MTY2NDI2MTIzOX0.m1Ma4OrK0cY4iN3Lxojy4MiDk3NmQN4cK9FkYP3qbL4\""
+						}
+					]
+				},
+				{
+					"name": "200 - nominal user#3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7b30b182-c77b-496d-8013-2a0663be9afe",
+								"exec": [
+									"pm.environment.set(\"userToken3\", pm.response.json());"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "1b916637-95ba-4875-b8ec-4565b297b49b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"{{userUsername3}}\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/get-token",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"get-token"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "da535870-7101-4d44-9ffb-217a573a5ba5",
+							"name": "200 - nominal",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"{{userUsername}}\",\n    \"password\": \"password\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/get-token",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"get-token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "334"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"14e-RyGEMlJF/3z6havgo8JddUPrTrw\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 Sep 2022 06:47:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzMyODEyNWY3Y2E3MzFhODBjNTNjNWUiLCJlbWFpbCI6ImFkcmlhbnBvdGh1YXVkK3RvZG9AZ21haWwuY29tIiwidXNlcm5hbWUiOiJhcG90aHVhdWQiLCJwYXNzd29yZCI6IiQyYiQxMCRpL2xXZ0NEblFmMVZjMi9TVW1pQnd1bjFtU1l2N2ZFYmcxRXBZYkprZndEblZnU2ZZanV4MiIsImlhdCI6MTY2NDI2MTIzOX0.m1Ma4OrK0cY4iN3Lxojy4MiDk3NmQN4cK9FkYP3qbL4\""
+						}
+					]
+				},
+				{
+					"name": "400 - no payload",
+					"id": "df1c149b-5750-415d-830d-931fd42cd34e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/get-token",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"get-token"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "48e23336-8e65-4636-a5f1-ebf188b3798b",
+							"name": "400 - no payload",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/get-token",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"get-token"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "47"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2f-bCauoT1C4tNoWW0bxe/NGAJpvUc\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 Sep 2022 06:47:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "\"username or email is required in request body\""
+						}
+					]
+				},
+				{
+					"name": "404 - username not found",
+					"id": "4115fd5d-7c35-4c1b-a4c8-ae3ea940d75d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"notfound\",\n    \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/get-token",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"get-token"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "45524a9d-64b6-4306-b7f0-494c80f27775",
+							"name": "404 - username not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"notfound\",\n    \"password\": \"password\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/get-token",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"get-token"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "16"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"10-FP8DimRMsqRn/7tBJghA2w7DIto\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 Sep 2022 06:47:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "\"user not found\""
+						}
+					]
+				}
+			],
+			"id": "2abd808d-e0c9-453b-95d3-a2b7bedab6ac"
+		},
+		{
+			"name": "/check-token",
+			"item": [
+				{
+					"name": "200 - nominal user#1",
+					"id": "d4a2314d-a5b5-4199-8552-1463899afb92",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\": \"{{userToken1}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/check-token",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"check-token"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "97c6bff6-5883-4c4d-a09d-084a1ac49e29",
+							"name": "200 - nominal",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"token\": \"{{userToken}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/check-token",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"check-token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "7"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7-o7x8yRQ5Qly8Br0nUbzBldd+KsM\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 Sep 2022 06:47:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "\"valid\""
+						}
+					]
+				},
+				{
+					"name": "200 - nominal user#2",
+					"id": "31ca825e-c8b2-4f70-ade5-de356352242a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\": \"{{userToken2}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/check-token",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"check-token"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "46859ad4-4bcf-4f21-a2ca-09f7142eb154",
+							"name": "200 - nominal",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"token\": \"{{userToken}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/check-token",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"check-token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "7"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7-o7x8yRQ5Qly8Br0nUbzBldd+KsM\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 Sep 2022 06:47:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "\"valid\""
+						}
+					]
+				},
+				{
+					"name": "200 - nominal user#3",
+					"id": "aa6baf7b-7a93-4f75-9618-a5289939dced",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\": \"{{userToken3}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/check-token",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"check-token"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "cd10bb33-47b3-45b2-93c6-0ff92ed758a2",
+							"name": "200 - nominal",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"token\": \"{{userToken}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/check-token",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"check-token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "7"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7-o7x8yRQ5Qly8Br0nUbzBldd+KsM\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 Sep 2022 06:47:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "\"valid\""
+						}
+					]
+				},
+				{
+					"name": "400 - no payload",
+					"id": "aa8e6eab-56c1-41c9-9d8f-0e445a9e9b66",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/auth/check-token",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"check-token"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "df262ec3-efe8-432c-bbbf-d5b675e981bd",
+							"name": "400 - no payload",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/auth/check-token",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"check-token"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "35"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"23-Ns19FuXRba26pL+ZtWxzvCdwZIk\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 27 Sep 2022 06:47:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "\"token is required in request body\""
+						}
+					]
+				}
+			],
+			"id": "76c5dbf5-fc3f-4e72-ab84-5543364b63b0"
+		}
+	],
+	"variable": [
+		{
+			"id": "1392503e-2bb6-4a52-9a9e-1e85711af91d",
+			"key": "randomUserEmail",
+			"value": ""
+		},
+		{
+			"id": "701491e8-33dd-405b-9bd3-dafd6f9e1ee8",
+			"key": "randomUsername",
+			"value": ""
+		}
+	]
+}
